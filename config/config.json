@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "12345678",
-    "database": "weather",
-    "host": "weather.crgqko028qxt.ap-southeast-2.rds.amazonaws.com",
+    "username": "sql12712544",
+    "password": "7WeiI2wdw5",
+    "database": "sql12712544",
+    "host": "sql12.freesqldatabase.com",
     "dialect": "mysql"
   }
 }
