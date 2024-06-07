@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://incomparable-lamington-c3131a.netlify.app',
     credentials: true,  
     optionsSuccessStatus: 200  
 };
