@@ -145,10 +145,7 @@ app.post('/subscribe', (req, res) => {
    
 
 
-    const token = crypto.randomBytes(16).toString('hex');
-    // i want to create subscriber model with email and token then save it to database
-    //save to database
-    // i want to create if not exist 
+    const token = crypto.randomBytes(16).toString('hex'); 
 
     db.Subscribers.findOrCreate({
         where: { email: email },
@@ -175,7 +172,7 @@ app.post('/subscribe', (req, res) => {
         from: 'tranvanphuongones@gmail.com',
         to: email,
         subject: 'Confirm your subscription',
-        text: `Please confirm your subscription by clicking on the following link: http://localhost:3001/confirm?token=${token}`
+        text: `Please confirm your subscription by clicking on the following link: https://gos-weather-server.onrender.com/confirm?token=${token}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
