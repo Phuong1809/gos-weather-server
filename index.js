@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'https://incomparable-lamington-c3131a.netlify.app',
+    origin: 'https://regal-daffodil-14c8ee.netlify.app',
     credentials: true,  
     optionsSuccessStatus: 200  
 };
