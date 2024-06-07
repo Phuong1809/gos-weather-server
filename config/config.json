@@ -15,9 +15,9 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "12345678",
+    "database": "weather",
+    "host": "arn:aws:rds:ap-southeast-2:975050281131:db:weather",
     "dialect": "mysql"
   }
 }
