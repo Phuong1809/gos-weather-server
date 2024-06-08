@@ -4,6 +4,8 @@ I use lib 'cron.schedule('50 7 * * *', async () => {' to send information about 
 
 Users have to confirm email via their email to get shedule sending 
 
+Link server: https://gos-weather-server.onrender.com
+
 To see my API (Swagger) let's acesss: https://gos-weather-server.onrender.com/api-docs/ 
 
 link for the backend https://gos-weather-server.onrender.com
