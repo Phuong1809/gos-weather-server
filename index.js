@@ -5,6 +5,104 @@ const crypto = require('crypto');
 const cron = require('node-cron');
 const app = express();
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+
+const swaggerOptions = {
+    swaggerDefinition: {
+      info: {
+        title: 'Weather API',
+        description: 'Weather API Information',
+        contact: {
+          name: 'Developer'
+        },
+        servers: ['http://localhost:3001']
+      }
+    },
+    apis: ['index.js']
+  };
+  
+  const swaggerDocs = swaggerJsDoc(swaggerOptions);
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+  
+  /**
+   * @swagger
+   * /subscribe:
+   *  post:
+   *    description: Use to subscribe to weather updates
+   *    parameters:
+   *      - name: email
+   *        in: body
+   *        required: true
+   *        schema:
+   *          type: string
+   *      - name: city
+   *        in: body
+   *        required: true
+   *        schema:
+   *          type: string
+   *    responses:
+   *      '200':
+   *        description: Confirmation email sent
+   *      '400':
+   *        description: Email or Location is required
+   *      '500':
+   *        description: Error sending confirmation email or Internal Server Error
+   */
+
+  /**
+ * @swagger
+ * /unsubscribe:
+ *  post:
+ *    description: Use to unsubscribe from weather updates
+ *    parameters:
+ *      - name: email
+ *        in: body
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      '200':
+ *        description: Unsubscribed successfully
+ *      '400':
+ *        description: Email is required
+ *      '500':
+ *        description: Error unsubscribing or Internal Server Error
+ */
+
+  /**
+ * @swagger
+ * /confirm:
+ *  get:
+ *    description: Use to confirm subscription to weather updates
+ *    parameters:
+ *      - name: token
+ *        in: query
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      '200':
+ *        description: Subscription confirmed
+ *      '400':
+ *        description: Token is required
+ *      '500':
+ *        description: Error confirming subscription or Internal Server Error
+ */
+
+  /**
+ * @swagger
+ * /:
+ *  get:
+ *    description: Use to test the API is working
+ *    responses:
+ *      '200':
+ *        description: API is working
+ *      '500':
+ *        description: Internal Server Error
+ */
+
+
 
 const corsOptions = {
     origin: 'https://regal-daffodil-14c8ee.netlify.app',
