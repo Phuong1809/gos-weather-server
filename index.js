@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 
-cron.schedule('36 9 * * *', async () => {
+cron.schedule('45 7 * * *', async () => {
     console.log('Sending daily weather updates');
     subscribers= await db.Subscribers.findAll()
     console.log("subcribers ", subscribers)
